@@ -120,8 +120,8 @@ window.startSurvey = () => {
     return
   }
 
-  if (!/^\d+$/.test(employeeCode)) {
-    alert("Employee Code must contain only numbers")
+  if (!/^[a-zA-Z0-9]+$/.test(employeeCode)) {
+    alert("Employee Code must contain only letters and numbers")
     return
   }
 
@@ -1045,7 +1045,7 @@ async function loadAvailableSurveys() {
           <div class="center-submit">
             ${
               activeIndex === availableSurveys.length - 1
-                ? `<button type="submit" style="background-color: ${activeSurvey.color || "#253074"}">Submit</button>`
+                ? `<button type="submit" style="background-color: ${activeSurvey.color || "#253074"}">Submit Survey</button>`
                 : ""
             }
           </div>
@@ -1758,4 +1758,3 @@ window.addEventListener("load", () => {
     window.showAdminLogin()
   }
 })
-
